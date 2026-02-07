@@ -431,29 +431,30 @@ body.easy-mode .bunny-box.kids-text { display: block !important; }
 }
 
 /* ----- Botón Auxilio Coquette 🎀 ----- */
+/* Estilo para el botón Coquette (NewJeans / Y2K) */
 .btn-coquette {
     position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: 20px;
+    right: 20px;
     z-index: 200;
     width: 56px;
     height: 56px;
+    font-size: 2rem;
+    background: #ffc8dd; /* Rosa NewJeans */
+    border: 3px solid white;
     border-radius: 50%;
-    border: 3px solid var(--pink-nj);
-    background: var(--cream);
-    font-size: 1.75rem;
     cursor: pointer;
-    box-shadow: var(--shadow-pink);
-    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 200, 221, 0.5);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, border-color 0.3s ease;
 }
 
 .btn-coquette:hover {
-    transform: scale(1.1);
-    background: var(--pink-nj);
+    transform: scale(1.2) rotate(15deg);
+    background: #ffb3d9;
 }
 
 body.easy-mode .btn-coquette {
-    background: var(--pink-nj);
+    background: #ffc8dd;
     border-color: var(--blue-nj);
 }
 
@@ -533,6 +534,14 @@ body.easy-mode .btn-coquette {
         opacity: 1;
         transform: scale(1) translateY(0);
     }
+}
+
+/* Modal Brainrot 2026 (NewJeans / Y2K aesthetic) */
+.modal-brainrot-content {
+    background: linear-gradient(135deg, #a2d2ff, #ffc8dd);
+    border: 5px solid white;
+    font-family: var(--font-display), sans-serif;
+    text-shadow: 2px 2px 0px #fff;
 }
 
 .modal-brainrot-content .modal-title {
