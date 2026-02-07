@@ -4,6 +4,15 @@
 
 var isEasyMode = false;
 
+// --- Diccionario Coquette 🎀 (traducciones modo niño) ---
+var bunnyTranslations = {
+    'Códices': 'Libritos de dibujos que parecen un acordeón infinito. 🎶',
+    'Popol Vuh': 'La historia de cómo nos hicieron con masa de maíz (como una arepa o tortilla). 🌽✨',
+    'Ollantay': 'Un general que se puso rebelde porque amaba a una princesa prohibida. Muy romántico, muy demure. 👑',
+    'Quipus': 'Nudos de colores para contar cosas porque no tenían calculadoras. 🧶',
+    'Anónima': 'Nadie sabe quién lo escribió, ¡fue un trabajo en equipo de todo el pueblo! 🐰🤝'
+};
+
 // --- Botón Auxilio Coquette (modo niño 7 años) ---
 function toggleEasyMode() {
     isEasyMode = !isEasyMode;
@@ -27,27 +36,27 @@ function showSection(id) {
     stopSpeech();
 }
 
-// --- Quiz: banco de preguntas ---
+// --- Quiz: banco de preguntas (TikTok 2026 Edition) ---
 var quizData = [
     {
-        question: '¿De qué material estaban hechos principalmente los códices mexicas?',
-        options: ['Piel de venado', 'Papel Amate', 'Piedra', 'Barro'],
+        question: '¿Qué material se usaba para los Códices?',
+        options: ['Papel Amate', 'Plástico reciclado', 'Piedra', 'Barro'],
         correct: 'Papel Amate'
     },
     {
-        question: '¿Cuál es el nombre del drama inca que narra un amor prohibido?',
-        options: ['Popol Vuh', 'Ollantay', 'Chilam Balam', 'Rabinal Achí'],
-        correct: 'Ollantay'
+        question: '¿Quiénes son los gemelos héroes del Popol Vuh?',
+        options: ['Hunahpú e Ixbalanqué', 'New y Jeans', 'Manco Cápac y Mama Ocllo', 'Ollantay y Cusi Coyllur'],
+        correct: 'Hunahpú e Ixbalanqué'
     },
     {
-        question: 'Según el Popol Vuh, ¿de qué material fue hecho el hombre definitivo?',
-        options: ['Barro', 'Madera', 'Maíz', 'Piedra'],
-        correct: 'Maíz'
+        question: '¿Cómo se llama el guerrero del Rabinal Achí?',
+        options: ['Quiché Achí', 'Skibidi Achí', 'Rabinaleb', 'Hunahpú'],
+        correct: 'Quiché Achí'
     },
     {
-        question: '¿Qué obra maya es un teatro-danza que aún se representa en Guatemala?',
-        options: ['Popol Vuh', 'Ollantay', 'Chilam Balam', 'Rabinal Achí'],
-        correct: 'Rabinal Achí'
+        question: '¿Qué son los Quipus?',
+        options: ['Nudos de colores', 'Zapatos de cuero', 'Libros de piel', 'Cantos de triunfo'],
+        correct: 'Nudos de colores'
     }
 ];
 
@@ -192,7 +201,13 @@ function playSectionSummary(sectionId) {
 
     var utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'es-ES';
-    utterance.rate = 0.95;
+    if (isEasyMode) {
+        utterance.rate = 1.05;
+        if (utterance.pitch !== undefined) utterance.pitch = 1.35;
+    } else {
+        utterance.rate = 0.92;
+        if (utterance.pitch !== undefined) utterance.pitch = 0.98;
+    }
     utterance.onend = utterance.onerror = function () {
         if (btn) {
             btn.classList.remove('playing');
