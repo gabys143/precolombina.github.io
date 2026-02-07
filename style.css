@@ -1,0 +1,553 @@
+/* ============================================
+   BUNNY-PEDIA · Estética NewJeans Y2K
+   Colores: Blue Jeans, Rosa Conejito, Crema
+   ============================================ */
+:root {
+    --blue-nj: #B9E9FF;
+    --pink-nj: #FFD1DC;
+    --cream: #FFF9F0;
+    --text: #555555;
+    --text-soft: #777;
+    --radius: 25px;
+    --radius-sm: 18px;
+    --shadow: 0 4px 20px rgba(185, 233, 255, 0.35);
+    --shadow-pink: 0 4px 20px rgba(255, 209, 220, 0.35);
+    --font-main: 'Nunito', sans-serif;
+    --font-display: 'Varela Round', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--cream);
+    font-family: var(--font-main);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+    transition: background-color 0.5s ease;
+}
+
+body.easy-mode {
+    background-color: #FFF0F5;
+}
+
+/* Modo niño: texto fácil visible, técnico oculto */
+.kids-text { display: none; }
+body.easy-mode .tech-text { display: none !important; }
+body.easy-mode .kids-text { display: block !important; }
+body.easy-mode .bunny-box.kids-text { display: block !important; }
+
+/* ----- Header ----- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: var(--cream);
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--blue-nj);
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    margin-right: 0.25rem;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    background: var(--pink-nj);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.nav-btn:hover {
+    background: var(--blue-nj);
+    transform: scale(1.05);
+    box-shadow: var(--shadow);
+}
+
+.nav-btn-cta {
+    background: var(--blue-nj);
+}
+
+.nav-btn-cta:hover {
+    background: var(--pink-nj);
+    box-shadow: var(--shadow-pink);
+}
+
+/* ----- Main ----- */
+.main {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem 1.5rem 3rem;
+}
+
+.section {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-badge {
+    display: inline-block;
+    background: var(--blue-nj);
+    color: var(--text);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.section h1,
+.section h2 {
+    font-family: var(--font-display);
+    color: var(--text);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.section h1 {
+    font-size: 2rem;
+}
+
+.section h2 {
+    font-size: 1.6rem;
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: var(--text-soft);
+    margin-bottom: 1.5rem;
+}
+
+/* ----- Cards ----- */
+.card {
+    background: white;
+    border: 3px dashed var(--blue-nj);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    text-align: left;
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: var(--shadow);
+}
+
+.card-soft {
+    text-align: center;
+}
+
+.card-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: var(--text);
+}
+
+.card-sub {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    margin: -0.25rem 0 0.5rem;
+}
+
+.card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+.card-feature {
+    margin-bottom: 1rem;
+}
+
+.card-feature h3 {
+    font-size: 1.2rem;
+}
+
+.card-highlight {
+    border-color: var(--pink-nj);
+    background: linear-gradient(135deg, #fff 0%, rgba(255, 209, 220, 0.15) 100%);
+}
+
+.card-codex {
+    border-radius: var(--radius);
+}
+
+.card-grid {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-grid.two-cols {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 600px) {
+    .card-grid.two-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ----- Bunny box (citas / destaque) ----- */
+.bunny-box {
+    background: white;
+    border: 3px dashed var(--pink-nj);
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* ----- Quiz ----- */
+.section-quiz {
+    text-align: center;
+}
+
+#quiz-container,
+#quiz-result {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+#quiz-progress {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#quiz-counter {
+    display: block;
+    font-weight: 600;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--pink-nj);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 25%;
+    background: var(--blue-nj);
+    border-radius: var(--radius);
+    transition: width 0.3s ease;
+}
+
+.quiz-question {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: white;
+    border: 3px solid var(--blue-nj);
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.quiz-option:hover {
+    background: var(--blue-nj);
+    transform: scale(1.02);
+}
+
+.quiz-option.correct {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.quiz-option.wrong {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.quiz-option:disabled {
+    cursor: default;
+    opacity: 0.9;
+}
+
+.quiz-option:disabled:hover {
+    transform: none;
+}
+
+.quiz-feedback {
+    margin-top: 1rem;
+    font-weight: 600;
+    min-height: 1.5rem;
+}
+
+.quiz-feedback.correct {
+    color: #28a745;
+}
+
+.quiz-feedback.wrong {
+    color: #dc3545;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--blue-nj);
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    background: var(--pink-nj);
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background: var(--pink-nj);
+}
+
+.btn-primary:hover {
+    background: var(--blue-nj);
+}
+
+.quiz-result {
+    padding: 2rem;
+    background: white;
+    border: 3px dashed var(--blue-nj);
+    border-radius: var(--radius);
+}
+
+.quiz-result h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.quiz-score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+/* ----- Footer ----- */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    border-top: 3px solid var(--pink-nj);
+    margin-top: auto;
+}
+
+/* ----- Botón Auxilio Coquette 🎀 ----- */
+.btn-coquette {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 200;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 3px solid var(--pink-nj);
+    background: var(--cream);
+    font-size: 1.75rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-pink);
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-coquette:hover {
+    transform: scale(1.1);
+    background: var(--pink-nj);
+}
+
+body.easy-mode .btn-coquette {
+    background: var(--pink-nj);
+    border-color: var(--blue-nj);
+}
+
+/* ----- Audio resumen (minimalista) ----- */
+.audio-resumen {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.audio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--blue-nj);
+    border: 2px dashed var(--pink-nj);
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.audio-btn:hover {
+    background: var(--pink-nj);
+    transform: scale(1.03);
+}
+
+.audio-btn.playing {
+    background: var(--pink-nj);
+}
+
+.audio-icon {
+    font-size: 1.1rem;
+}
+
+/* ----- Modal Error TikTok 2026 ----- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-overlay.is-open {
+    display: flex;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-brainrot {
+    background: var(--cream);
+    border: 4px dashed var(--pink-nj);
+    border-radius: var(--radius);
+    padding: 2rem;
+    max-width: 380px;
+    text-align: center;
+    animation: modalPop 0.35s ease;
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-brainrot-content .modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: var(--text);
+}
+
+.modal-brainrot-content .modal-body {
+    margin: 0 0 1.25rem;
+    font-size: 1rem;
+    color: var(--text-soft);
+}
+
+.modal-brainrot-content .btn {
+    margin-top: 0;
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUNNY-PEDIA · Literatura Precolombina</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">🐰</span>
+            BUNNY-PEDIA
+        </div>
+        <nav class="nav">
+            <button type="button" onclick="showSection('intro')" class="nav-btn">Inicio</button>
+            <button type="button" onclick="showSection('codices')" class="nav-btn">Códices</button>
+            <button type="button" onclick="showSection('maya')" class="nav-btn">Mundo Maya</button>
+            <button type="button" onclick="showSection('inca')" class="nav-btn">Imperio Inca</button>
+            <button type="button" onclick="showSection('quiz')" class="nav-btn nav-btn-cta">¡Quiz!</button>
+        </nav>
+    </header>
+
+    <main id="content" class="main">
+        <!-- SECCIÓN A: Introducción -->
+        <section id="intro" class="section active">
+            <div class="section-badge">🐰 Hype 'n History</div>
+            <h1>Literatura Precolombina</h1>
+
+            <p class="lead tech-text">Producción literaria de los pueblos americanos <strong>antes de 1492</strong>: Aztecas, Mayas e Incas.</p>
+            <p class="lead kids-text" style="display: none;">Eran cuentos hermosos que escribían pueblos antiguos sobre la naturaleza. ¡Nadie sabía quién los escribía porque eran de todos!</p>
+
+            <div class="card-grid">
+                <div class="card card-soft">
+                    <span class="card-emoji">👥</span>
+                    <h3>Anónima y Colectiva</h3>
+                    <p class="tech-text">No importaba el autor, sino la comunidad.</p>
+                    <p class="kids-text" style="display: none;">Eran cuentos de todos, no de una sola persona.</p>
+                </div>
+                <div class="card card-soft">
+                    <span class="card-emoji">✨</span>
+                    <h3>Sagrada</h3>
+                    <p class="tech-text">Relacionada con mitos de creación y dioses.</p>
+                    <p class="kids-text" style="display: none;">Hablan de dioses y de cómo se creó el mundo.</p>
+                </div>
+                <div class="card card-soft">
+                    <span class="card-emoji">🌽</span>
+                    <h3>Agrarista</h3>
+                    <p class="tech-text">El ciclo de la tierra y el maíz eran temas centrales.</p>
+                    <p class="kids-text" style="display: none;">Les importaba mucho la tierra y el maíz.</p>
+                </div>
+            </div>
+
+            <div class="bunny-box tech-text">
+                <strong>Transmisión:</strong> Principalmente oral. Mayas y Aztecas usaban sistemas pictográficos y jeroglíficos.
+            </div>
+            <div class="bunny-box kids-text" style="display: none;">
+                Se contaban de boca en boca. Los Mayas y Aztecas también dibujaban en piedras y en libros de piel.
+            </div>
+
+            <div class="audio-resumen" data-section="intro">
+                <button type="button" class="audio-btn" onclick="playSectionSummary('intro')" title="Escuchar resumen">
+                    <span class="audio-icon">🔊</span> Escuchar resumen
+                </button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN B: Códices -->
+        <section id="codices" class="section">
+            <div class="section-badge">📜 Los Códices</div>
+            <h2>¿Qué son los Códices?</h2>
+
+            <p class="lead tech-text">Libros de <strong>papel amate</strong> o <strong>piel de venado</strong> plegados como biombos.</p>
+            <p class="lead kids-text" style="display: none;">Son libros largos que se doblan como un acordeón. No tenían letras, tenían dibujos mágicos para recordar su historia. 🎨</p>
+
+            <div class="card-list">
+                <div class="card card-codex">
+                    <h3>📜 Códice Boturini</h3>
+                    <p class="card-sub">Tira de la Peregrinación</p>
+                    <p>Narra el viaje de los mexicas desde Aztlán.</p>
+                </div>
+                <div class="card card-codex">
+                    <h3>📜 Códice Mendoza</h3>
+                    <p class="card-sub">Administración y tributos</p>
+                    <p>Datos administrativos y de tributos del imperio.</p>
+                </div>
+                <div class="card card-codex">
+                    <h3>📜 Códice Dresde</h3>
+                    <p class="card-sub">Mundo maya</p>
+                    <p>Astronomía y rituales mayas.</p>
+                </div>
+            </div>
+
+            <div class="audio-resumen" data-section="codices">
+                <button type="button" class="audio-btn" onclick="playSectionSummary('codices')" title="Escuchar resumen">
+                    <span class="audio-icon">🔊</span> Escuchar resumen
+                </button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN C: Mundo Maya -->
+        <section id="maya" class="section">
+            <div class="section-badge">🌿 Mundo Maya</div>
+            <h2>Popol Vuh, Chilam Balam y Rabinal Achí</h2>
+
+            <div class="card card-feature">
+                <h3>📖 Popol Vuh · Libro del Consejo</h3>
+                <p class="tech-text">La "Biblia" Maya-Quiché. Explica la creación del mundo y del hombre (hecho de <strong>maíz</strong>) y las aventuras de los gemelos <strong>Hunahpú e Ixbalanqué</strong>.</p>
+                <p class="kids-text" style="display: none;">Es la historia de cómo los dioses intentaron crear a las personas. Al final, nos hicieron con masa de maíz. ¡Somos personitas de tortilla! 🌽</p>
+            </div>
+
+            <div class="card card-feature">
+                <h3>📖 Chilam Balam</h3>
+                <p>Libros que recopilan profecías, historia y medicina maya.</p>
+            </div>
+
+            <div class="card card-feature card-highlight">
+                <h3>🎭 Rabinal Achí</h3>
+                <p class="tech-text">Baile-drama del siglo XIII que <strong>sobrevive hasta hoy</strong>. Trata el juicio del guerrero Quiché Achí ante la corte de los Rabinaleb'. Declarado <strong>Patrimonio de la Humanidad</strong> por la UNESCO.</p>
+                <p class="kids-text" style="display: none;">Es un teatro de guerreros que se baila con máscaras. ¡Todavía lo representan en Guatemala!</p>
+            </div>
+
+            <div class="audio-resumen" data-section="maya">
+                <button type="button" class="audio-btn" onclick="playSectionSummary('maya')" title="Escuchar resumen">
+                    <span class="audio-icon">🔊</span> Escuchar resumen
+                </button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN D: Imperio Inca -->
+        <section id="inca" class="section">
+            <div class="section-badge">☀️ Imperio Inca</div>
+            <h2>Ollantay y Poesía Inca</h2>
+
+            <div class="card card-feature">
+                <h3>🎭 Ollantay</h3>
+                <p class="tech-text">El drama más famoso. Amor prohibido entre el general <strong>Ollantay</strong> (plebeyo) y <strong>Cusi Coyllur</strong> (hija del Inca Pachacútec). Temas: honor, rebelión y perdón.</p>
+                <p class="kids-text" style="display: none;">Un soldado valiente se enamoró de una princesa, pero el Rey no los dejaba estar juntos porque no eran de la misma familia real. 👑</p>
+            </div>
+
+            <div class="card-grid two-cols">
+                <div class="card card-soft">
+                    <h3>Aylli</h3>
+                    <p>Cantos de triunfo y agricultura.</p>
+                </div>
+                <div class="card card-soft">
+                    <h3>Harawi</h3>
+                    <p>Poesía amorosa, lírica y melancólica.</p>
+                </div>
+            </div>
+
+            <div class="bunny-box tech-text">
+                <strong>Quipus:</strong> Sistema de nudos usado para recordar datos y posiblemente relatos.
+            </div>
+            <div class="bunny-box kids-text" style="display: none;">
+                <strong>Quipus:</strong> Los Incas usaban nudos de colores para recordar cosas y contar historias.
+            </div>
+
+            <div class="audio-resumen" data-section="inca">
+                <button type="button" class="audio-btn" onclick="playSectionSummary('inca')" title="Escuchar resumen">
+                    <span class="audio-icon">🔊</span> Escuchar resumen
+                </button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN E: Quiz -->
+        <section id="quiz" class="section section-quiz">
+            <div class="section-badge">✨ Quiz Time</div>
+            <h2>¿Cuánto aprendiste?</h2>
+            <p class="lead">Elige la respuesta correcta en cada pregunta.</p>
+
+            <div id="quiz-container">
+                <div id="quiz-progress">
+                    <span id="quiz-counter">1 / 4</span>
+                    <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+                </div>
+
+                <div id="quiz-question" class="quiz-question"></div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+                <button type="button" id="quiz-next" class="btn btn-primary" onclick="nextQuestion()" style="display: none;">Siguiente</button>
+            </div>
+
+            <div id="quiz-result" class="quiz-result" style="display: none;">
+                <h3>¡Resultado!</h3>
+                <p id="quiz-score" class="quiz-score"></p>
+                <button type="button" class="btn btn-primary" onclick="restartQuiz()">Volver a jugar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>🐰 BUNNY-PEDIA · Literatura Precolombina · Estética NewJeans</p>
+    </footer>
+
+    <!-- Botón Auxilio Coquette -->
+    <button type="button" id="btn-coquette" class="btn-coquette" onclick="toggleEasyMode()" title="Modo fácil (para niños)">
+        🎀
+    </button>
+
+    <!-- Modal Error TikTok 2026 -->
+    <div id="modal-brainrot" class="modal-overlay" aria-hidden="true">
+        <div class="modal-brainrot">
+            <div class="modal-brainrot-content">
+                <p class="modal-title">ERROR: q nuv, perdiste😝</p>
+                <p class="modal-body">Ajuiciate o te ajuicio, se un pelao' serio🤬</p>
+                <button type="button" class="btn btn-primary" onclick="closeErrorModal()">Ok, me ajuicio 🐰</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
