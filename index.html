@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUNNY-PEDIA · Literatura Precolombina</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Para Live Server / estático: -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Para Flask (descomenta y comenta la de arriba): -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -116,9 +119,13 @@
             </div>
 
             <div class="card card-feature card-highlight">
-                <h3>🎭 Rabinal Achí</h3>
-                <p class="tech-text">Baile-drama del siglo XIII que <strong>sobrevive hasta hoy</strong>. Trata el juicio del guerrero Quiché Achí ante la corte de los Rabinaleb'. Declarado <strong>Patrimonio de la Humanidad</strong> por la UNESCO.</p>
-                <p class="kids-text" style="display: none;">Es un teatro de guerreros que se baila con máscaras. ¡Todavía lo representan en Guatemala!</p>
+                <h3>🎭 Rabinal Achí: El Varón de Rabinal</h3>
+                <p class="tech-text">Es una obra del siglo XIII, representativa del período <strong>posclásico maya</strong>. Se basa en el conflicto entre dos grupos: los Rabinaleb' y los K'iche'. Es un "baile-drama" que utiliza máscaras para contactar con los antepasados (<em>rajawales</em>).</p>
+                <p class="kids-text" style="display: none;">Es un baile de guerreros con máscaras de madera. ¡Es tan importante que es un tesoro del mundo entero! 🌍</p>
+            </div>
+
+            <div class="bunny-box tech-text">
+                <strong>Dato Pro:</strong> Los libros del <em>Chilam Balam</em> fueron escritos después de la conquista, pero guardan los secretos antiguos de los mayas en lengua original con letras españolas.
             </div>
 
             <div class="audio-resumen" data-section="maya">
@@ -147,6 +154,19 @@
                 <div class="card card-soft">
                     <h3>Harawi</h3>
                     <p>Poesía amorosa, lírica y melancólica.</p>
+                </div>
+            </div>
+
+            <div class="card-grid two-cols">
+                <div class="card card-soft">
+                    <h3>🏹 Épica Inca</h3>
+                    <p class="tech-text">Narra mitos sobre el origen de los Incas, como la leyenda de <strong>Manco Cápac y Mama Ocllo</strong>.</p>
+                    <p class="kids-text" style="display: none;">Cuentan cómo los primeros reyes salieron de un lago mágico para fundar su ciudad. 🌊</p>
+                </div>
+                <div class="card card-soft">
+                    <h3>🎭 Teatro: Usca Paukar</h3>
+                    <p class="tech-text">Además de Ollantay, existen autos sacramentales como <em>Usca Paukar</em>, que mezclan lo inca con lo español.</p>
+                    <p class="kids-text" style="display: none;">¡Hacían obras de teatro muy largas sobre reyes y dioses! 🎭</p>
                 </div>
             </div>
 
@@ -194,12 +214,12 @@
         <p>🐰 BUNNY-PEDIA · Literatura Precolombina · Estética NewJeans</p>
     </footer>
 
-    <!-- Botón Auxilio Coquette -->
+    <!-- Botón Auxilio Coquette 🎀 (modo niño / animado) -->
     <button type="button" id="btn-coquette" class="btn-coquette" onclick="toggleEasyMode()" title="Modo fácil (para niños)">
         🎀
     </button>
 
-    <!-- Modal Error TikTok 2026 -->
+    <!-- Modal Error TikTok 2026 (al fallar quiz) -->
     <div id="modal-brainrot" class="modal-overlay" aria-hidden="true">
         <div class="modal-brainrot">
             <div class="modal-brainrot-content">
@@ -210,6 +230,9 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Para Live Server / estático: -->
+    <script src="static/script.js"></script>
+    <!-- Para Flask (descomenta y comenta la de arriba): -->
+    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
 </body>
 </html>
